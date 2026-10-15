@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+{% if stats %}
+<div class="cards">
+  <div class="card"><span>Customers</span><b>{{ stats.customers }}</b></div>
+  <div class="card"><span>Active accounts</span><b>{{ stats.accounts }}</b></div>
+  <div class="card"><span>Total deposits</span><b>{{ stats.total|money }}</b></div>
+</div>
+{% endif %}
+<h2>All accounts</h2>
+<div class="scroll">
+<table>
+  <tr><th>Acc no</th><th>Customer</th><th>Type</th><th class="r">Balance</th><th>Status</th></tr>
+  {% for a in accounts %}
+  <tr>
+    <td><a href="{{ url_for('account', acc_no=a.acc_no) }}">{{ a.acc_no }}</a></td>
+    <td>{{ a.name }}</td><td>{{ a.acc_type }}</td>
+    <td class="r">{{ a.balance|money }}</td>
+    <td><span class="tag {{ a.status|lower }}">{{ a.status }}</span></td>
+  </tr>
+  {% else %}
+  <tr><td colspan="5" class="muted">No accounts yet.</td></tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Open account - Mini Bank{% endblock %}
+{% block content %}
+<h1>Open account</h1>
+<form method="post" class="panel">
+  <div class="row">
+    <label>Customer ID <input name="cust_id" type="number" min="1" required></label>
+    <label>Account type
+      <select name="acc_type"><option>SAVINGS</option><option>CURRENT</option></select>
+    </label>
+    <label>Opening deposit <input name="initial" type="number" min="0" step="0.01" value="0"></label>
+    <button>Open</button>
+  </div>
+  <p class="muted">SAVINGS accounts need an opening deposit of at least {{ min_balance }}. Find customer IDs on the Customers page.</p>
+</form>
+{% endblock %}
