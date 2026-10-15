@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mini Banking System - Oracle PL/SQL + Flask web app
 
 A small bank application. All banking rules live in the PL/SQL package `bank_pkg`;
@@ -47,3 +48,7 @@ tests/            web-layer tests (python tests/test_app.py, no Oracle needed)
 - Transfer to the same account / a missing account -> error shown
 - Close an account that still has money -> error
 - In SQL: `DELETE FROM transactions;` -> blocked by trigger
+=======
+# mini-banking-system
+A Mini Banking Management System built using Python, Oracle Database, and PL/SQL, featuring account management, balance enquiry, fund transfers, transaction processing, and database automation. Demonstrates SQL programming, stored procedures, database connectivity, transaction management, and backend development.
+>>>>>>> 5c505ce438d5353af85a96437f425a13242e2a84
